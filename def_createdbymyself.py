@@ -10,7 +10,7 @@ def outlier_IQR(df, col, w=1.5):
 
     return o_idx
 
-def zscr_idx(data, col):
+def zscr_idx(data, col, tres=3):
     mean = data[col].mean()
     std = data[col].std()
     
@@ -19,11 +19,11 @@ def zscr_idx(data, col):
     otrl_idx = []
     
     for val in data[col]:
-        if ((val-mean)/std>3)|((val-mean)/std<-3):
+        if ((val-mean)/std>tres)|((val-mean)/std<-tres):
             otrl.append(val)
             otrl_idx.append(idx)
         idx+=1
-
+​
     #otrl = [val for val in data[col] if ((val-mean)/std>3)|((val-mean)/std<-3)]
     
     return otrl, otrl_idx
@@ -33,6 +33,15 @@ def del_outlier(df,o_idx):
     df = df.drop(o_idx, axis=0, inplace=True)
   
     return df
+
+def modified_zscr(data, col, k=1.4826):
+    med = data[col].median()
+    
+    #median absolute deviation
+    m_a_d = data[col].map(lambda x: np.abs(x-med)).median()
+    
+    mod_zscr = [data[col].map(lambda x: k/2*(x-med)/m_a_d)]
+    return mod_zscr
 
 def binning_IQR(df, col):
     q25 = np.percentile(df[col].values, 25)
