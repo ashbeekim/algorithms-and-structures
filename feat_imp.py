@@ -138,3 +138,18 @@ accuracy = accuracy_score(y_test, yhat)
 print('Accuracy: %.2f' % (accuracy*100))
 
 # [cf link_feature importance] https://machinelearningmastery.com/calculate-feature-importance-with-python/
+
+# # lightgbm.plot_importance
+# # https://lightgbm.readthedocs.io/en/latest/pythonapi/lightgbm.plot_importance.html
+    
+# # https://scikit-learn.org/stable/auto_examples/ensemble/plot_forest_importances.html
+
+# #Permutation Feature Importance
+# # https://scikit-learn.org/stable/auto_examples/inspection/plot_permutation_importance.html
+
+# #xgboost
+# # https://machinelearningmastery.com/feature-importance-and-feature-selection-with-xgboost-in-python/
+
+# feature_names = [f'feature {i}' for i in range(X.shape[1])]
+# forest = RandomForestClassifier(random_state=0)
+# forest.fit(X_train, y_train)
