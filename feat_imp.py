@@ -1,54 +1,140 @@
-#train, test, samplesub
+#liner
+#from sklearn.linear_model import LinearRegression
+# define dataset
+X, y = make_regression(n_samples=1000, n_features=10, n_informative=5, random_state=1)
+# define the model
+model = LinearRegression()
+# fit the model
+model.fit(X, y)
+# get importance
+imp = model.coef_
+# summarize feature importance
+for i,v in enumerate(imp):
+    print('Feature: %0d, Score: %.5f' % (i,v))
+# plot feature importance
+plt.bar([x for x in range(len(imp))], imp)
+plt.show()
 
-X_trn = data.copy().drop(['PassengerId','Survived'], axis=1)
-X_tst = df.copy().drop('PassengerId', axis=1)
-y_trn = data.copy().Survived
-y_tst = target.copy().Survived
+#logistic
+#from sklearn.linear_model import LogisticRegression
+# define dataset
+X, y = make_classification(n_samples=1000, n_features=10, n_informative=5, n_redundant=5, random_state=1)
+# define the model
+model = LogisticRegression()
+# fit the model
+model.fit(X, y)
+# get importance
+imp = model.coef_[0]
+# summarize feature importance
+for i,v in enumerate(imp):
+    print('Feature: %0d, Score: %.5f' % (i,v))
+# plot feature importance
+plt.bar([x for x in range(len(imp))], imp)
+plt.show()
 
-model = XGBClassifier()
+#DecisionTree
+#from sklearn.tree import DecisionTreeRegressor
+# define dataset
+X, y = make_regression(n_samples=1000, n_features=10, n_informative=5, random_state=1)
+# define the model
+model = DecisionTreeRegressor()
+# fit the model
+model.fit(X, y)
+# get importance
+imp = model.feature_importances_
+# summarize feature importance
+for i,v in enumerate(imp):
+    print('Feature: %0d, Score: %.5f' % (i,v))
+# plot feature importance
+plt.bar([x for x in range(len(imp))], imp)
+plt.show()
 
-model.fit(X_trn,y_trn)
+#RandomForest
+#from sklearn.ensemble import RandomForestRegressor
+# define dataset
+X, y = make_regression(n_samples=1000, n_features=10, n_informative=5, random_state=1)
+# define the model
+model = RandomForestRegressor()
+# fit the model
+model.fit(X, y)
+# get importance
+imp = model.feature_importances_
+# summarize feature importance
+for i,v in enumerate(imp):
+    print('Feature: %0d, Score: %.5f' % (i,v))
+# plot feature importance
+plt.bar([x for x in range(len(imp))], imp)
+plt.show()
 
-#prediction
-y_pred = model.predict(X_tst)
-y_prob = model.predict_proba(X_tst)
-# y_score = model.decision_function(X_tst)  #SVM
-mse = mean_squared_error(y_pred, y_tst)
+#XGBoost
+#from xgboost import XGBRegressor
+# define dataset
+X, y = make_regression(n_samples=1000, n_features=10, n_informative=5, random_state=1)
+# define the model
+model = XGBRegressor()
+# fit the model
+model.fit(X, y)
+# get importance
+imp = model.feature_importances_
+# summarize feature importance
+for i,v in enumerate(imp):
+	print('Feature: %0d, Score: %.5f' % (i,v))
+# plot feature importance
+plt.bar([x for x in range(len(imp))], imp)
+plt.show()
 
-#scoring
-score = model.score(X_trn, y_trn)
-accry = accuracy_score(y_tst,y_pred)
-  # Accuracy makes no sense here because you're trying to predict on continuous values. Only use accuracy for categorical variables.
-precs = metrics.precision_score(y_tst,y_pred)
-recal = metrics.recall_score(y_tst,y_pred)
-# precs, recal, _ = precision_recall_curve(y_tst, y_score)
-f1scr = metrics.f1_score(y_tst,y_pred)
-r2scr = metrics.r2_score(y_tst,y_pred)
+#Permutation
+#from sklearn.neighbors import KNeighborsRegressor
+#from sklearn.inspection import permutation_importance
+# define dataset
+X, y = make_regression(n_samples=1000, n_features=10, n_informative=5, random_state=1)
+# define the model
+model = KNeighborsRegressor()
+# fit the model
+model.fit(X, y)
+# perform permutation importance
+results = permutation_importance(model, X, y, scoring='neg_mean_squared_error')
+# get importance
+imp = results.importances_mean
+# summarize feature importance
+for i,v in enumerate(imp):
+	print('Feature: %0d, Score: %.5f' % (i,v))
+# plot feature importance
+plt.bar([x for x in range(len(imp))], imp)
+plt.show()
 
-rocauc = metrics.roc_auc_score(y_tst,y_pred)
-auc = metrics.roc_auc_score(y_tst, y_prob[:,1])
-# fpr, tpr, thresholds = metrics.roc_curve(y_tst, y_pred, pos_label=2)
-fpr, tpr, thresholds = roc_curve(y_tst, y_prob[:,1])
-# roc_auc_plot = metrics.auc(fpr,tpr)
-auc_plot = metrics.roc_auc_score(y_tst, y_prob[:,1])
+#Feature Selection
+from sklearn.model_selection import train_test_split
+from sklearn.feature_selection import SelectFromModel
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
+ 
+# feature selection
+def select_features(X_train, y_train, X_test, n_est=42):
+    # configure to select a subset of features
+    feat_s = SelectFromModel(RandomForestClassifier(n_estimators=n_est), max_features=5)
+    # learn relationship from training data
+    feat_s.fit(X_train, y_train)
+    # transform train input data
+    X_trn_fs = feat_s.transform(X_train)
+    # transform test input data
+    X_tst_fs = feat_s.transform(X_test)
+    return X_trn_fs, X_tst_fs, feat_s
 
-clf_report = metrics.classification_report(y_tst,y_pred)
-matrix = metrics.confusion_matrix(y_tst,y_pred)
-expvarscore = explained_variance_score(y_tst,y_pred)
+# define the dataset
+X, y = make_classification(n_samples=1000, n_features=10, n_informative=5, n_redundant=5, random_state=1)
+# split into train and test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=1)
+# feature selection
+X_trn_fs, X_tst_fs, feat_s = select_features(X_train, y_train, X_test)
+# fit the model
+model = LogisticRegression(solver='liblinear')
+model.fit(X_trn_fs, y_train)
+# evaluate the model
+yhat = model.predict(X_test_fs)
+# evaluate predictions
+accuracy = accuracy_score(y_test, yhat)
+print('Accuracy: %.2f' % (accuracy*100))
 
-print(f'score : {round(score,3)}')
-print(f'accuracy : {round(accry,3)}')
-print(f'precision : {round(precs,3)}')
-print(f'recall : {round(recal,3)}')
-print(f'f1 score : {round(f1scr,3)}')
-print(f'r2 score : {round(r2scr,3)}')
-print(f'roc auc score : {round(rocauc,3)}')
-print(f'auc score : {round(auc,3)}')
-print(f'classification report : \n {clf_report}')
-print(f'matrix : {matrix}')
-print(f'explained variand score : {round(expvarscore,3)}')
-
-# model importance
-fscore = model.get_booster().get_fscore()
-print(fscore)
-plot_importance(model)
+# [cf link_feature importance] https://machinelearningmastery.com/calculate-feature-importance-with-python/
