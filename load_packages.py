@@ -108,6 +108,7 @@ from sklearn.model_selection import train_test_split, cross_val_score, KFold, St
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import MinMaxScaler, LabelEncoder
 from sklearn.impute import SimpleImputer
+from sklearn.preprocessing import OneHotEncoder
 ##################################################################################################################
 
 ##################################### Machine Learning #####################################
