@@ -65,3 +65,21 @@ a, b = map(int, input().split())
 print(a*int(str(b)[-1:]), a*int(str(b)[1:2]), a*int(str(b)[:1]), a*b, end='\n')
 # a, b = map(int, str, input().split())
 # print(a*int(b[-1:]), a*int(b[1:2]), a*int(b[:1]), a*int(b), end='\n')
+
+######################################################## changed ########################################################
+
+# # 10
+# id = input().lower()  # 따로 길이에 따른 예외처리는 하지 않음
+# print(id + "??!")
+
+# # 11
+# year = int(input())
+# print(year-543)
+
+# # 13
+# A = int(input())
+# B = int(input())
+# print(A*int(str(B)[-1]))
+# print(A*int(str(B)[-2]))
+# print(A*int(str(B)[-3]))
+# print(A*B)
