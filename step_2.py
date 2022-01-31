@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 # if
-
 # # 1
 A, B = map(lambda x: int(x), input().split())
 if A>B:
@@ -31,3 +30,18 @@ elif year%4==0 and year%100!=0:
   print(1)
 else: 
   print(0)
+  
+# # 4
+X = int(input())
+Y = int(input())
+if X > 0:
+    print(1) if Y > 0 else print(4)
+else:
+    print(2) if Y > 0 else print(3)
+    
+# # 5
+H, M = map(int, input().split())
+time = H*60 + M
+time = (time - 45) if (time - 45 >= 0) else (time - 45 + 24*60)
+H, M = time//60, time%60
+print(" ".join([str(H), str(M)]))
