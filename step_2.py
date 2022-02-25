@@ -45,3 +45,20 @@ time = H*60 + M
 time = (time - 45) if (time - 45 >= 0) else (time - 45 + 24*60)
 H, M = time//60, time%60
 print(" ".join([str(H), str(M)]))
+
+# # 6
+A, B = map(int, input().split(' '))
+C = int(input())
+assert A in range(24)
+assert B in range(60)
+assert C in range(1000)
+H, M = C//60, C%60
+if B + M <= 59:
+    M = B + M
+    H = H + A
+else:
+    M = B + M - 60
+    H = H + A + 1
+if H > 23:
+    H = H - 24
+print(H, M, sep=' ')
