@@ -1,0 +1,41 @@
+-- 고양이와 개는 몇 마리 있을까
+SELECT animal_type, COUNT(1) FROM animal_ins
+WHERE animal_type = 'Cat' OR animal_type = 'Dog'
+GROUP BY animal_type
+ORDER BY animal_type;
+
+-- 루시와 엘라 찾기
+
+-- 최솟값 구하기
+SELECT MIN(datetime) FROM animal_ins;
+
+-- 동명 동물 수 찾기
+SELECT name, count(name) AS count FROM animal_ins
+GROUP BY name
+HAVING count >= 2
+ORDER BY name;
+
+-- 이름에 el이 들어가는 동물 찾기
+
+-- 동물 수 구하기
+SELECT COUNT(1) FROM animal_ins;
+
+-- 입양 시각 구하기(1)
+SELECT HOUR(datetime), count(1) FROM animal_outs
+WHERE DATE_FORMAT(datetime, '%H:%i') BETWEEN '09:00' AND '19:59'
+GROUP BY HOUR(datetime)
+ORDER BY HOUR(datetime);
+
+-- NULL 처리하기
+SELECT animal_type, IFNULL(name, "No name") AS name, sex_upon_intake FROM animal_ins;
+
+-- 중성화 여부 파악하기
+
+-- 중복 제거하기
+SELECT COUNT(DISTINCT name) FROM animal_ins;
+
+-- DATETIME에서 DATE로 형 변환
+
+/*
+MAX, MIN이 level1, level 2로 나뉘는 건 아직도 이유를 모르겠음.
+*/
