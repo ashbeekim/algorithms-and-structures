@@ -9,5 +9,6 @@ _site
 # avoid auto-updates
 *.md
 *.py
+*.sql
 *.cpp
 *.java
