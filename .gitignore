@@ -2,7 +2,10 @@ _site
 .DS_Store
 .gitignore
 
-# undefined
+# IDE
 .idea
+.vscode
+
+# undefined
 *.cpp
 *.java
