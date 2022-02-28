@@ -30,7 +30,7 @@
     ```
     Logic is traditionally defined as the study of the laws of thought or correct reasoning.
     ```
-      사전적 정의 중 해당 인용구를 발췌한 이유는 laws를 일반적으로 알고 있는 '법'의 의미를 '규칙', '사규', '정책' 등 입체적으로 바꾸면 프로그래밍에서 'logic'의 중요성을 알 수 있기 때문이다.
+    사전적 정의 중 해당 인용구를 발췌한 이유는 laws를 일반적으로 알고 있는 '법'의 의미를 '규칙', '사규', '정책' 등 입체적으로 바꾸면 프로그래밍에서 'logic'의 중요성을 알 수 있기 때문이다.
 
 
 ## Contexts
