@@ -90,7 +90,7 @@
 
 ---
 [^wiki_algorithm]: 계산의 순서로만 이해하기엔, 충분한 설명이 아닌 것 같아서 조금 더 참고한 뒤 수정하겠음.
-[^wiki_structure]: 직군에 따라 우선적으로 파악해야 할 구조가 다를 것이기에 다음의 위키피디아 링크로 대체하나, 혹시 한국 지원이 되지 않는 링크라면 목차나 키워드만 파악 후 `Pattern`, `Flow`, 혹은 `Architecture` 등의 `Structure`와 유사한 의미를 가진 단어와 사용 언어, 목차/키워드를 조합해 검색하면 이미지 파일로 확인이 가능하다.(그 후 github 내 관심 라이브러리 소스의 `tree`를 확인하는 것도 큰 틀을 파악하기 좋은 방법이다.)
+[^wiki_structure_list]: 직군에 따라 우선적으로 파악해야 할 구조가 다를 것이기에 다음의 위키피디아 링크로 대체하나, 혹시 한국 지원이 되지 않는 링크라면 목차나 키워드만 파악 후 `Pattern`, `Flow`, 혹은 `Architecture` 등의 `Structure`와 유사한 의미를 가진 단어와 사용 언어, 목차/키워드를 조합해 검색하면 이미지 파일로 확인이 가능하다.(그 후 github 내 관심 라이브러리 소스의 `tree`를 확인하는 것도 큰 틀을 파악하기 좋은 방법이다.)
     * [Software Architecture](https://en.wikipedia.org/wiki/Software_architecture)
     * [Data Structure](https://en.wikipedia.org/wiki/Data_structure)
     * [Structure_(mathematical_logic)](https://en.wikipedia.org/wiki/Structure_(mathematical_logic))
