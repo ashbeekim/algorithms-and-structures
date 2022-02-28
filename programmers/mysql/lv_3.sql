@@ -24,6 +24,11 @@ ORDER BY ins.datetime
 LIMIT 3;
 
 -- 헤비 유저가 소유한 장소
+SELECT id, name, host_id FROM (
+    SELECT *, COUNT(*) OVER (PARTITION BY host_id) AS cnt FROM places
+) place_cnt
+WHERE cnt >= 2
+ORDER BY id;
 
 -- 오랜 기간 보호한 동물(2)
 SELECT outs.animal_id AS animal_id, 
@@ -35,6 +40,8 @@ ORDER BY TIMESTAMPDIFF(DAY, ins.datetime, outs.datetime) desc
 LIMIT 2;
 
 /*
+"헤비 유저가 소유한 장소"는 변수 하나를 생성하고 더하는 방식으로 풀어야 하나 하면서 삽질하다가 그냥 서브 쿼리로 풀이함.
+
 "오랜 기간 보호한 동물(2)"에서 ORDER BY TIMEDIFF(ins.datetime, outs.datetime) desc로 출력했다가 여러 "838:59:59" 값 반환으로 정답이 아니라는 결과에 join에서 실수한 것이란 생각을 했음
 근데 입양을 가야 일자를 산출할 수 있을테니, 다른 원인을 찾아봄. TIMEDIFF는 60일까지만 시분초로 반환한다고 함. 따라서 일자로 반환되도록 TIMESTAMPDIFF(DAY, ins.datetime, outs.datetime) 사용.
 */
