@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 # if
+'''
+마지막 문제는 쉬운 내용을 어렵게 푼 감이 없잖아 들지만...당시의 최선이었음.
+'''
 # 1330
 A, B = map(lambda x: int(x), input().split())
 if A>B:

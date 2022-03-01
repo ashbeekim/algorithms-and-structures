@@ -1,55 +1,53 @@
 # -*- coding: utf-8 -*-
-
-#1
+# I/O, +-*/
+'''
+이전에 풀이했던 때와 최근에 들어갔을 때 문제에서 추가됨
+'''
+# 2557
 print('Hello World!')
 
-#2
+# 10718
 print('강한친구 대한육군')
 print('강한친구 대한육군')
 
-#3
+# 10171
 print('''\\    /\\
  )  ( ')
 (  /  )
  \\(__)|''')
 
-print('\\    /\\')
-print(") )  ( ')")
-print('(  /  )')
-print(' \\(__)|')
-
-#4
+# 10172
 print('''|\\_/|
 |q p|   /}
 ( 0 )"""\\
 |"^"`    |
 ||_/=\\\\__|''')
 
-#5
+# 1000
 a, b = map(int, input().split())
 print(a+b)
 
-#6
+# 1001
 a, b = map(int, input().split())
 print(a-b)
 
-#7
+# 10998
 a, b = map(int, input().split())
 print(a*b)
 
-#8
+# 1008
 a, b = map(int, input().split())
 print(a/b)
 
-#9
+# 10869
 a, b = map(int, input().split())
 print(a+b, a-b, a*b, a//b, a%b, end='\n')
 
-#10
+# 10430
 A, B, C = map(int, input().split())
 print((A+B)%C, ((A%C) + (B%C))%C, (A*B)%C, ((A%C) * (B%C))%C, end='\n')
 
-#11
+# ???
 a, b = map(int, input().split())
 print(a*int(str(b)[-1:]), a*int(str(b)[1:2]), a*int(str(b)[:1]), a*b, end='\n')
 # a, b = map(int, str, input().split())
@@ -57,15 +55,15 @@ print(a*int(str(b)[-1:]), a*int(str(b)[1:2]), a*int(str(b)[:1]), a*b, end='\n')
 
 ######################################################## changed ########################################################
 
-# 10
+# 10926
 id = input().lower()  # 따로 길이에 따른 예외처리는 하지 않음
 print(id + "??!")
 
-# 11
+# 18108
 year = int(input())
 print(year-543)
 
-# 13
+# 2588
 A = int(input())
 B = int(input())
 print(A*int(str(B)[-1]))
