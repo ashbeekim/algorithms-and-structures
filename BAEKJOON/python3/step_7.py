@@ -57,8 +57,13 @@ else:
     print(key[0])
 
 # 1152
+n = sys.stdin.readline()
+# assert len(n) <= 1000000
+print(len(n.split()))
 
 # 2908
+num = list(map(lambda x: int(x[::-1]), input().split()))
+print(max(num))
 
 # 5622
 
@@ -68,4 +73,5 @@ else:
 
 '''
 # 1157 IndexError 왜 생기는지 모르겠음...로컬에서는 두 방법 모두 제대로 결과가 나오는데...하...
+# 1152 `문자열의 길이는 1,000,000을 넘지 않는다`고 해서, `assert len(n) <= 1000000`를 추가했는데 AssertionError 발생함..ㅎㅎ..일단 주석 처리하고 다시 제출하니 통과함.
 '''
