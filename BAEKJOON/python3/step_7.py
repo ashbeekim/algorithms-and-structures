@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 # string
+from dataclasses import replace
 import sys
 from collections import Counter
 
@@ -68,6 +69,11 @@ print(max(num))
 # 5622
 
 # 2941
+word = input()
+rules = ["c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z="]
+for i in rules:
+    word = word.replace(i, " ")
+print(len(word))
 
 # 1316
 
