@@ -10,5 +10,7 @@ _site
 *.md
 *.py
 *.sql
+*.c
 *.cpp
 *.java
+*.go
