@@ -147,13 +147,51 @@ if __name__ == '__main__':
 
         fptr.write(str(result) + '\n')
     fptr.close()
-    
+
 
 # Diagonal Difference
+def diagonalDifference(arr):
+    rl = [arr[i][j] for i, j in zip(range(len(arr)), range(len(arr)-1, -1, -1))]
+    lr = [arr[i][j] for i, j in zip(range(len(arr)), range(len(arr)))]
+    return abs(sum(lr) - sum(rl))
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    arr = []
+
+    for _ in range(n):
+        arr.append(list(map(int, input().rstrip().split())))
+    
+    result = diagonalDifference(arr)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
 
 
 # Counting Sort 1
+def countingSort(arr):
+    c = Counter(arr)
+    m = {i:0 for i in range(100)}
+    return list(map(lambda x: c.get(x[0]) if x[0] in list(c.keys()) else x[1], m.items()))
 
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    result = countingSort(arr)
+
+    fptr.write(' '.join(map(str, result)))
+    fptr.write('\n')
+
+    fptr.close()
+    
 
 # Pangrams
 
