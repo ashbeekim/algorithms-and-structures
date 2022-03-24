@@ -5,16 +5,18 @@ import os
 import random
 import re
 import sys
+from collections import Counter
+
 
 # Plus Minus
 def plusMinus(arr):
     # Write your code here
-    plus = list(filter(lambda x: x>0, arr))
-    minus = list(filter(lambda x: x<0, arr))
-    zero = list(filter(lambda x: x==0, arr))
-    print(len(plus)/len(arr))
-    print(len(minus)/len(arr))
-    print(len(zero)/len(arr))
+    plus = list(filter(lambda x: x > 0, arr))
+    minus = list(filter(lambda x: x < 0, arr))
+    zero = list(filter(lambda x: x == 0, arr))
+    print(len(plus) / len(arr))
+    print(len(minus) / len(arr))
+    print(len(zero) / len(arr))
 
 if __name__ == '__main__':
     n = int(input().strip())
@@ -30,8 +32,8 @@ def miniMaxSum(arr):
     sums = []
     for i in range(len(arr)):
     #     sums.append(sum(list(filter(lambda x: x!=arr[i], arr)))) ## 한 케이스에서 Wrong Answer 발생 >> drop
-        left = [] if i==0 else arr[:i]
-        right = [] if i==len(arr)-1 else arr[i+1:]
+        left = [] if i == 0 else arr[:i]
+        right = [] if i == len(arr) - 1 else arr[i+1:]
         sums.append(sum(left + right))
 
     print(min(sums), max(sums), sep=" ")
@@ -49,9 +51,9 @@ def timeConversion(s):
     # Write your code here
     s, comp = s[:-2], s[-2:]
     times = list(map(str, s.split(':')))
-    if (comp=="AM")&(times[0]=="12"):
+    if (comp == "AM")&(times[0] == "12"):
         return ":".join(["00", times[1], times[2]])
-    elif ((comp=="PM")&(times[0]=="12"))|(comp=="AM"):
+    elif ((comp == "PM")&(times[0] == "12"))|(comp == "AM"):
         return ":".join(times)
     else:
         return ":".join([str(int(times[0])+12), times[1], times[2]])
@@ -104,10 +106,48 @@ if __name__ == '__main__':
 
 
 # Lonely Integer
+def lonelyinteger(a):
+    c = Counter(a)
+    c = sorted(c.items(), key=lambda x: x[1])
+    return c[0][0]
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    a = list(map(int, input().rstrip().split()))
+
+    result = lonelyinteger(a)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
 
 
 # Flipping bits
+def flippingBits(n):
+    b = format(n, 'b')
+    if len(b) < 32:
+        b = '0'*(32 - len(b)) + b
+    b = b.replace('0', '*')
+    b = b.replace('1', '0')
+    b = b.replace('*', '1')
+    return int('0b' + b, 2)
 
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    q = int(input().strip())
+
+    for q_itr in range(q):
+        n = int(input().strip())
+
+        result = flippingBits(n)
+
+        fptr.write(str(result) + '\n')
+    fptr.close()
+    
 
 # Diagonal Difference
 
