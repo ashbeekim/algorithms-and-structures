@@ -194,6 +194,25 @@ if __name__ == '__main__':
     
 
 # Pangrams
+def pangrams(s):
+    # Write your code here
+    temp = Counter(s.lower())
+    comp = {S:0 for S in list("abcdefghijklmnopqrstuvwxyz")}
+    comp = dict(map(lambda x: (x[0], temp.get(x[0])) if x[0] in temp.keys() else (x[0], x[1]), list(comp.items())))
+    if  list(filter(lambda x: x==0, comp.values())):
+        return "not pangram"
+    return "pangram"
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = pangrams(s)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
 
 
 # Permuting Two Arrays
@@ -203,6 +222,20 @@ if __name__ == '__main__':
 
 
 # XOR Strings 2
+def strings_xor(s, t):
+    res = ""
+    for i in range(len(s)):
+        if s[i] == t[i]:
+            res += '0';
+        else:
+            res += '1';
+
+    return res
+
+s = input()
+t = input()
+print(strings_xor(s, t))
+## 와 4줄의 공백
 
 
 # Mock Test
