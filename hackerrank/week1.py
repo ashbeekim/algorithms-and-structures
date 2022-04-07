@@ -216,9 +216,65 @@ if __name__ == '__main__':
 
 
 # Permuting Two Arrays
+def twoArrays(k, A, B):
+    # Write your code here
+    A.sort()
+    B.sort(reverse=True)
+    arr = [a + b for a, b in zip(A, B)]
+    arr = list(map(lambda x: x >= k, arr))
+    return "NO" if False in arr else "YES"
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    q = int(input().strip())
+
+    for q_itr in range(q):
+        first_multiple_input = input().rstrip().split()
+
+        n = int(first_multiple_input[0])
+
+        k = int(first_multiple_input[1])
+
+        A = list(map(int, input().rstrip().split()))
+
+        B = list(map(int, input().rstrip().split()))
+
+        result = twoArrays(k, A, B)
+
+        fptr.write(result + '\n')
+
+    fptr.close()
 
 
 # Subarray Division 1
+def birthday(s, d, m) -> int:
+    # Write your code here
+    arr = []
+    for i in range(len(s)):
+        arr.append(s[i : i + m])
+        if i + 2 == len(arr):
+            break
+    return len(list(filter(lambda x: x==d, list(map(sum, arr)))))
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())    # len(s)
+
+    s = list(map(int, input().rstrip().split()))
+
+    first_multiple_input = input().rstrip().split() # d, m,, 왜 이렇게 불러온 것인지 이해하려 하지 말 것
+
+    d = int(first_multiple_input[0])
+
+    m = int(first_multiple_input[1])
+
+    result = birthday(s, d, m)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
 
 
 # XOR Strings 2
