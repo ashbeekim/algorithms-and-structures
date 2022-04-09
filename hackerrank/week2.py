@@ -40,18 +40,18 @@ case 2
     a = [1 ,2 ,3 ,4 ,5 ,6 ,7], n = 7
     return [1 ,2 ,3 ,7 ,6 ,5 ,4]
 '''
-def findZigZagSequence(a, n):   # a = 
-    a.sort()    # [1, 2, 3, 4, 5] >> task: 
-    mid = int((n + 1)/2)    # 3
-    a[mid], a[n-1] = a[n-1], a[mid] # a[3], a[4] = a[4], a[3] >> n-1>mid-1, a[3], a[2] = a[2], a[3]
+def findZigZagSequence(a, n):
+    a.sort()
+    mid = int((n + 1)/2) - 1
+    a[mid], a[n-1] = a[n-1], a[mid]
+    st = mid + 1
+    ed = n - 2
 
-    st = mid + 1    # 4
-    ed = n - 1  # 4
     while(st <= ed):
         a[st], a[ed] = a[ed], a[st]
         st = st + 1
-        ed = ed + 1
-
+        ed = ed - 1
+    
     for i in range (n):
         if i == n-1:
             print(a[i])
