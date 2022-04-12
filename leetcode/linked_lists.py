@@ -34,3 +34,13 @@ class Solution:
         if list1:
             list1.next = self.mergeTwoLists(list1.next, list2)
         return list1
+
+    def reverseList(self, head: ListNode) -> ListNode:
+        node, prev = head, None
+
+        while node:
+            next, node.next = node.next, prev
+            prev, node = node, next
+        return prev
+
+    
