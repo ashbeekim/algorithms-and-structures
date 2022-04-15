@@ -80,3 +80,32 @@ for i in A:
         B.append(str(i))
 print(" ".join(B))
 
+# 10952
+while True:
+    try:
+        a, b = map(int, sys.stdin.readline().split())
+        assert (a>0)&(a<10)&(b>0)&(b<10)
+        print(a+b)
+    except:
+        break
+
+# 10951
+while True:
+    try:
+        a, b = map(int, sys.stdin.readline().split())
+        assert (a>0)&(a<10)&(b>0)&(b<10)
+        print(a+b)
+    except:
+        break
+
+# 1110
+N = arr = input()
+cnt = 0
+while True:
+    if (cnt > 0)&(int(N)==int(arr[-2:])):
+        print(cnt)
+        break
+    arr = arr if int(arr) >= 10 else "0" + arr
+    num = int(arr[-2]) + int(arr[-1]) if int(arr[-2]) + int(arr[-1]) < 10 else int(arr[-2]) + int(arr[-1]) - 10
+    arr = arr + str(num)
+    cnt += 1
