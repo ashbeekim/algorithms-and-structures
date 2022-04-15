@@ -60,6 +60,5 @@ for i in range(n):
     arr = list(map(int, (sys.stdin.readline()).split()))
     _m = sum(arr[1:])/arr[0]
     new = list(filter(lambda x: x > _m, arr[1:]))
-    val = str(len(new)/arr[0]*100)
-    val = val[:6] if len(val) >= 6 else val + "0"*(6-len(val))
-    print(f"{val}%")
+    val = len(new)/arr[0]*100
+    print("%.3f" % val, "%", sep="")
