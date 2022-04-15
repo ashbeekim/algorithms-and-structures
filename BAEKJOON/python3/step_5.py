@@ -1,58 +1,31 @@
 # -*- coding: utf-8 -*-
-# 1d array
-import sys
+# function
+# 15596
+def solve(a: list) -> int:
+    return sum()
 
-# 10818
-n = int(input())
-arr = list(map(int, input().split()))
-print(min(arr), max(arr), sep=' ')
+# 4673
+def d(n=10000):
+    n_range = list(map(str, range(1, n+1)))
+    sum_range = [int(i) + sum(list(map(int, i))) for i in n_range]
+    n_range = list(map(int, n_range))
+    return sorted(set(n_range) - set(sum_range))
+self_num = d()
+for i in self_num:
+    print(i)
 
-# 2562
-cnt, nums = 1, dict()
-while cnt < 10:
-    num = int(sys.stdin.readline())
-    nums[num] = cnt
-    cnt += 1
-print(max(nums.keys()))
-print(nums.get(max(nums.keys())))
-
-# 2577
-a = int(input())
-b = int(input())
-c = int(input())
-n_bucket = {i:0 for i in range(10)}
-num = list(map(int, list(str(a*b*c))))
-for i in num:
-    n_bucket[i] += 1
-for j, k in n_bucket.items():
-    print(k)
-
-# 3052
-cnt, arr = 0, []
-while cnt < 10:
-    num = int(sys.stdin.readline())
-    arr.append(num%42)
-    cnt += 1
-print(len(set(arr)))
-
-# 1546
-n = int(input())
-arr = list(map(int, input().split()))
-new = list(map(lambda x: x/max(arr)*100, arr))
-print(sum(new)/n)
-
-# 8958
-n = int(input())
-for i in range(n):
-    l = sys.stdin.readline()
-    pts, score = 0, 0
-    for j in l:
-        if j=='O':
-            pts += 1
-            score += pts
-        else:
-            pts = 0
-    print(score)
-
-# 4344
-
+# 1065
+n = input()
+assert int(n)<=1000
+def hansu(n):
+    # 한수: 각 자리수가 등차수열을 이룸
+    if len(n) < 3:
+        return int(n)
+    else:
+        hansu = 99
+        n_range = list(map(str, range(100, int(n)+1)))
+        for i in n_range:
+            if int(i[0]) - int(i[1]) == int(i[1]) - int(i[2]):
+                hansu += 1
+        return hansu
+print(hansu(n))
