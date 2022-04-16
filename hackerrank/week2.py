@@ -67,6 +67,33 @@ for cs in range (test_cases):
 
 
 # Drawing Book
+def pageCount(n, p):
+    pages = range(n + 1) if n % 2 == 1 else range(n + 2)
+    lefts = list(pages)[::2]
+    front, back = 0, 0
+    p = p -1 if p % 2 == 1 else p
+    for num in lefts:
+        if num == p:
+            break
+        front += 1
+    for num in lefts[::-1]:
+        if num == p:
+            break
+        back += 1
+    return min(front,back)
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    p = int(input().strip())
+
+    result = pageCount(n, p)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
 
 
 # Tower Breakers
