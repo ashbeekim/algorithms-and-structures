@@ -2,7 +2,7 @@
 # function
 # 15596
 def solve(a: list) -> int:
-    return sum()
+    return sum(a)
 
 # 4673
 def d(n=10000):
