@@ -76,6 +76,25 @@ for i in rules:
 print(len(word))
 
 # 1316
+def checkGroupWord(letter):
+    letters, res = [], 0
+    for idx, char in enumerate(letter):
+        if char in letters:
+            if letter[idx-1]==char:
+                pass
+            else:
+                res+=1
+                break
+        else:
+            letters.append(char)
+    return 0 if res else 1
+
+N = int(sys.stdin.readline())
+result = 0
+for i in range(N):
+    letter = sys.stdin.readline().strip()
+    result += checkGroupWord(letter)
+print(result)
 
 '''
 # 1157 IndexError 왜 생기는지 모르겠음...로컬에서는 두 방법 모두 제대로 결과가 나오는데...하...
