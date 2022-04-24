@@ -4,36 +4,27 @@ from collections import deque
 # 기능개발
 
 # 프린터
-def printImp(arr, imp):
-    p = arr.popleft()
-    if p != imp:
-        arr.append(p)
-    if imp not in arr:
-        imp = max(arr)
-    return arr, imp
-
 def solution(priorities, location):
-    imp, length = max(priorities), len(priorities)
     res = 0
-    documents = deque(range(length))
-    arr = deque(priorities.copy())
-    while location in documents:
-        arr, temp = printImp(arr, imp)
-        q = documents.popleft()
-        if length == 1:
+    documents = deque([(priorities[idx], idx) for idx in range(len(priorities))])
+    imp = max(list(map(lambda x: x[0], documents)))
+    while location in list(map(lambda x: x[1], documents)):
+        temp = max(list(map(lambda x: x[0], documents)))
+        doc, idx = documents.popleft()
+        if len(documents) == 0:
             res += 1
-        if (length != len(arr))&(imp == temp):
+            break
+        if (temp==imp)&(doc==temp):
             res += 1
-            if location != q:
-                documents.append(q)
-        elif (imp != temp):
-            length = len(arr)
-            res += 1
-            if location != q:
-                documents.append(q)
-        elif (length == len(arr))&(location == q):
-            documents.append(q)
-
+            if idx != location:
+                documents.append((doc, idx))
+        else:
+            if doc != temp:
+                documents.append((doc, idx))
+            else:
+                res += 1
+                if idx != location:
+                    documents.append((doc, idx))
     return res
 
 # 다리를 지나는 트럭
