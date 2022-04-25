@@ -61,6 +61,7 @@
 | ... | ... | ... | ... |
 | 49 | [매우 어려운 자료구조와 알고리즘(수정 예정)](https://www.acmicpc.net/step/46) | - | - |
 
+
 ---
 ### [Programmers](https://programmers.co.kr/learn/challenges)
   프로그래머스에서의 쿼리 데이터는 ODbL을 따르며 Kaggle에서의 데이터를 활용했다. 고난도의 쿼리가 많으면, 재밌게 DB 공부를 할 수 있을 것 같은데 대체적으로 R(read)에 치중된 내용이라 사이트 내 더 데이터가 쌓일 때까지는 Google BigQuery로 C(create), U(update)를 실습하면 좋을 듯 하다.(Delete는 아직 무서워서...)
@@ -86,26 +87,28 @@
 
 | level | section | division | languages |
 |:-------|:---------|:---------:|:----------|
-| 1 to 3 | [Coding Test High Score Kit](https://programmers.co.kr/learn/challenges?tab=algorithm_practice_kit) | [Hash](https://programmers.co.kr/learn/courses/30/parts/12077) | - |
-| 2 | [Coding Test High Score Kit](https://programmers.co.kr/learn/challenges?tab=algorithm_practice_kit) | [Stack/Queue](https://programmers.co.kr/learn/courses/30/parts/12081) | - |
-| 2 to 3 | [Coding Test High Score Kit](https://programmers.co.kr/learn/challenges?tab=algorithm_practice_kit) | [Heap](https://programmers.co.kr/learn/courses/30/parts/12117) | - |
-| 1 to 2 | [Coding Test High Score Kit](https://programmers.co.kr/learn/challenges?tab=algorithm_practice_kit) | [Sort](https://programmers.co.kr/learn/courses/30/parts/12198) | - |
-| 1 to 2 | [Coding Test High Score Kit](https://programmers.co.kr/learn/challenges?tab=algorithm_practice_kit) | [Brute Force](https://programmers.co.kr/learn/courses/30/parts/12230) | - |
-| 1 to 2 | [Coding Test High Score Kit](https://programmers.co.kr/learn/challenges?tab=algorithm_practice_kit) | [Greedy](https://programmers.co.kr/learn/courses/30/parts/12244) | - |
-| 3 to 4 | [Coding Test High Score Kit](https://programmers.co.kr/learn/challenges?tab=algorithm_practice_kit) | [Dynamic Programming](https://programmers.co.kr/learn/courses/30/parts/12263) | - |
-| 2 to 3 | [Coding Test High Score Kit](https://programmers.co.kr/learn/challenges?tab=algorithm_practice_kit) | [DFS/BFS](https://programmers.co.kr/learn/courses/30/parts/12421) | - |
-| 3 to 4 | [Coding Test High Score Kit](https://programmers.co.kr/learn/challenges?tab=algorithm_practice_kit) | [Binary Search](https://programmers.co.kr/learn/courses/30/parts/12486) | - |
-| 3 and 5 | [Coding Test High Score Kit](https://programmers.co.kr/learn/challenges?tab=algorithm_practice_kit) | [Graph](https://programmers.co.kr/learn/courses/30/parts/14393) | - |
+| 1 to 3 | [Coding Test High Score Kit](https://programmers.co.kr/learn/challenges?tab=algorithm_practice_kit) | [Hash](https://programmers.co.kr/learn/courses/30/parts/12077) | <ul><li style="list-style-type:none;"> - [ ] Python3</li></ul> |
+| 2 | [Coding Test High Score Kit](https://programmers.co.kr/learn/challenges?tab=algorithm_practice_kit) | [Stack/Queue](https://programmers.co.kr/learn/courses/30/parts/12081) | <ul><li style="list-style-type:none;"> - [ ] Python3</li></ul> |
+| 2 to 3 | [Coding Test High Score Kit](https://programmers.co.kr/learn/challenges?tab=algorithm_practice_kit) | [Heap](https://programmers.co.kr/learn/courses/30/parts/12117) | <ul><li style="list-style-type:none;"> - [ ] Python3</li></ul> |
+| 1 to 2 | [Coding Test High Score Kit](https://programmers.co.kr/learn/challenges?tab=algorithm_practice_kit) | [Sort](https://programmers.co.kr/learn/courses/30/parts/12198) |  <ul><li style="list-style-type:none;"> - [x] [Python3](./programmers/python3/sort.py)</li></ul> |
+| 1 to 2 | [Coding Test High Score Kit](https://programmers.co.kr/learn/challenges?tab=algorithm_practice_kit) | [Brute Force](https://programmers.co.kr/learn/courses/30/parts/12230) | <ul><li style="list-style-type:none;"> - [x] [Python3](./programmers/python3/brute-force.py)</li></ul> |
+| 1 to 2 | [Coding Test High Score Kit](https://programmers.co.kr/learn/challenges?tab=algorithm_practice_kit) | [Greedy](https://programmers.co.kr/learn/courses/30/parts/12244) | <ul><li style="list-style-type:none;"> - [ ] Python3</li></ul> |
+| 3 to 4 | [Coding Test High Score Kit](https://programmers.co.kr/learn/challenges?tab=algorithm_practice_kit) | [Dynamic Programming](https://programmers.co.kr/learn/courses/30/parts/12263) | <ul><li style="list-style-type:none;"> - [ ] Python3</li></ul> |
+| 2 to 3 | [Coding Test High Score Kit](https://programmers.co.kr/learn/challenges?tab=algorithm_practice_kit) | [DFS/BFS](https://programmers.co.kr/learn/courses/30/parts/12421) | <ul><li style="list-style-type:none;"> - [ ] Python3</li></ul> |
+| 3 to 4 | [Coding Test High Score Kit](https://programmers.co.kr/learn/challenges?tab=algorithm_practice_kit) | [Binary Search](https://programmers.co.kr/learn/courses/30/parts/12486) | <ul><li style="list-style-type:none;"> - [ ] Python3</li></ul> |
+| 3 and 5 | [Coding Test High Score Kit](https://programmers.co.kr/learn/challenges?tab=algorithm_practice_kit) | [Graph](https://programmers.co.kr/learn/courses/30/parts/14393) | <ul><li style="list-style-type:none;"> - [ ] Python3</li></ul> |
 | no more than 5 | [모든 문제](https://programmers.co.kr/learn/challenges?tab=all_challenges) | - | - |
 
 
-> ### [LeetCode](https://leetcode.com/problemset/all/)
+---
+### [LeetCode](https://leetcode.com/problemset/all/)
 풀이할 문제 이름부터 직관적이기도 하고, 알고리즘, DB, 스크립트 등 다양하게 연습을 할 수 있는 곳이기도 하다. 기본으로 제공된 문제를 다 풀이한 사람은 프리미엄 구독도 기꺼이 할 것 같은 생각이 들게하는 알고리즘 문제 풀이 플랫폼인 리트코드. 글로벌한 대기업의 인터뷰 자료나 코딩테스트 준비에도 좋은 플랫폼이라고 생각은 들지만, 유일한 단점은 영어를 읽을 줄 알아야 한다.
 
 [책만 | 파이썬 알고리즘 인터뷰(박상길 지음, 정진호 일러스트)](https://github.com/onlybooks/algorithm-interview)는 해당 도서의 깃헙 레포지토리로, 리트코드를 중심으로 코딩 테스트 방법을 설명한 책인데, 참고해서 연습을 하다보면 보다 많은 방법을 시도해 볼 수 있다. 우아한 풀이라고 불리는 풀이법이 여럿 보이지만, 막 공부를 시작한 내 수준에서 이해하기 어려운 내용이 많기 때문에 가끔은 알고 있는 수준에서 문제를 풀이하고자 [extra_easy](./leetcode/extra_easy.py)로 시간 날 때 풀이할 계획이나, 당분간 책을 바탕으로 구조나 알고리즘에 대한 이해를 높이는 것을 우선으로 하고 있다.
 
 
-> ### [HackerRank](https://www.hackerrank.com/)
+---
+### [HackerRank](https://www.hackerrank.com/)
 가입을 하면 1 Month Preparation Kit이란 이름으로 4주 정도의 풀이할 알고리즘 리스트가 제공된다. 각 주차의 문제를 풀이하고 나면, Mock Test까지 제공되는데 이런 저런 이유로 활동이 겹치다보니 주차의 문제를 풀어나가기에 급급해서 아직 시도하진 않았다.
 
 가급적 해당 플랫폼의 문제는 혼자 힘으로 풀이하고 싶다는 이유로 막히면 일단 다른 플랫폼에서 머리를 식히거나, 다른 일이나 공부를 하다가 다시 들어오면 풀리는 신기한(?) 체험을 할 수 있다. LeetCode에서 언급한 책의 내용과 같은 우아한 풀이는 없지만, 그냥 궁금한 분들은 다음 링크를 참고하길.
