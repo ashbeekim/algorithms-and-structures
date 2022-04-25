@@ -30,7 +30,22 @@ def solution(priorities, location):
 # 다리를 지나는 트럭
 
 # 주식가격
-
+def solution(prices):
+    answer = []
+    for idx, p in enumerate(prices[:-1]):
+        temp = list(map(lambda x: x >= p, prices))
+        temp = temp[idx+1:]
+        res = 0
+        for t in temp:
+            if t:
+                res += 1
+            else:
+                res += 1
+                break
+        answer.append(res)
+    answer.append(0)
+    return answer
+    
 '''
 Stack: LIFO(Last In First Out)
 Queue: FIFO(First In First Out)
