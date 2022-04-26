@@ -33,29 +33,17 @@ for i in range(T):
     print("".join(S))
 
 # 1157
-## trial 1. IndexError
-word = input()
-assert len(word)<=1000000
-word = Counter(list(word.lower()))
-word = sorted(word.items(), key=lambda x: -x[1])
-if (len(word)>=2)&(word[0][1]==word[1][1]):
-    print('?')
-else:
-    print((word[0][0].upper())
-## trial 2. IndexError
 word = list(map(lambda x: x.upper(), input()))
-assert len(word)<=1000000
-unq = dict(map(lambda x: (x, 0), set(word)))
-for _k, _v in unq.items():
-    _n = list(filter(lambda x: x==_k, word))
-    unq[_k] += len(_n)
-unq = sorted(unq.items(), key=lambda x: -x[1])
-key = list(map(lambda x: x[0], unq))
-val = list(map(lambda x: x[1], unq))
-if (len(unq)>=2)&(val[0]==val[1]):
+unq = Counter(word)
+unq = dict(sorted(unq.items(), key=lambda x: -x[1]))
+key_list = list(unq.keys())
+cnt_list = list(unq.values())
+if (len(unq)==1):
+    print(key_list[0])
+elif (len(unq)>=2)&(cnt_list[0]==cnt_list[1]):
     print('?')
-else:
-    print(key[0])
+elif (len(unq)>=2)&(cnt_list[0]!=cnt_list[1]):
+    print(key_list[0])
 
 # 1152
 n = sys.stdin.readline()
@@ -98,5 +86,6 @@ print(result)
 
 '''
 # 1157 IndexError 왜 생기는지 모르겠음...로컬에서는 두 방법 모두 제대로 결과가 나오는데...하...
+        KeyError를 겪고, 로컬에서도 발생한 IndexError를 겪고 제대로 푼 것 같아서 else로 처리한 내용 중 IndexError가 발생할 경우의 수를 제외하도록 코드 수정.
 # 1152 `문자열의 길이는 1,000,000을 넘지 않는다`고 해서, `assert len(n) <= 1000000`를 추가했는데 AssertionError 발생함..ㅎㅎ..일단 주석 처리하고 다시 제출하니 통과함.
 '''
