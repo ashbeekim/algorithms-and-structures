@@ -6,7 +6,8 @@ if B >= C:
     print(-1)
 else:
     print(A//(C-B)+1)
-    
+
+
 # 2292
 
 # 1193
@@ -18,24 +19,21 @@ else:
 # 2775
 
 # 2839
+N = int(input())
+
+bag = 0
+
+while N >= 0:
+    if N % 5 == 0:
+        bag = bag + (N // 5)
+        print(bag)
+        break
+    N -= 3
+    bag += 1
+else:
+    print(-1)
+
 
 # 10757
-
-def factorial(x):
-    if x==1:
-        return 1
-    else:
-        return x * factorial(x-1)
-def is_even(x):
-    if x==0:
-        return True
-    else:
-        return is_odd(x-1)
-def is_odd(x):
-    return not is_even(x)
-
-def fib(x):
-    if x==0 or x==1:
-        return 1
-    else:
-        return fib(x-1) + fib(x-2)
+sum_list = list(map(int, input().split()))
+print(sum(sum_list))
