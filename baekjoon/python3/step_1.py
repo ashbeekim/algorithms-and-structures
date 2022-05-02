@@ -70,3 +70,12 @@ print(A*int(str(B)[-1]))
 print(A*int(str(B)[-2]))
 print(A*int(str(B)[-3]))
 print(A*B)
+
+# 25083
+print("         ,r'"+'"7')
+print("r`-_   ,'  ,/")
+print(' \. ". L_r'+"'")
+print("""   `~\/
+      |
+      |""")
+      
