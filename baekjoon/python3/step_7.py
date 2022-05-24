@@ -9,12 +9,32 @@ else:
 
 
 # 2292
+N = int(input())
+center = 1
+last = 0
+while True:
+    if N > center:
+        last += 1
+        center = center + last * 6
+    else:
+        print(last + 1)
+        break
+
 
 # 1193
 
 # 2869
 
 # 10250
+for _ in range(int(input())):
+    H, W, N = map(int, input().split())
+    a = N % H
+    b = N // H + 1
+    if a == 0:
+        a = H
+        b -= 1
+    print(a * 100 + b)
+
 
 # 2775
 
@@ -37,3 +57,11 @@ else:
 # 10757
 sum_list = list(map(int, input().split()))
 print(sum(sum_list))
+
+
+"""
+# 2292
+    # 처음에 if, else의 순서를 다르게 이해하고 작성해서, 시간초과에 빠짐. 예상 못한 규칙이라면 반영이 되지 않도록 해야 함.
+# 10250
+    # 연산의 순서가 분명하다면, 굳이 괄호로 묶을 필요는 없음.
+"""
