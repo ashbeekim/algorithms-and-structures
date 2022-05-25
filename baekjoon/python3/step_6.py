@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 # string
+from ast import pattern
 from dataclasses import replace
 import sys
 from collections import Counter
@@ -55,6 +56,16 @@ num = list(map(lambda x: int(x[::-1]), input().split()))
 print(max(num))
 
 # 5622
+number = input().strip()
+times = [1 + idx for idx in range(1, 11)]
+patterns = ['', 'ABC', 'DEF', 'GHI', 'JKL', 'MNO' 'PQRS', 'TUV', 'WXYZ', '']
+total = 0
+
+for n in number:
+    for _idx, _v in enumerate(patterns):
+        if n in _v:
+            total += times[_idx]
+print(total)
 
 # 2941
 word = input()
@@ -88,4 +99,5 @@ print(result)
 # 1157 IndexError 왜 생기는지 모르겠음...로컬에서는 두 방법 모두 제대로 결과가 나오는데...하...
         KeyError를 겪고, 로컬에서도 발생한 IndexError를 겪고 제대로 푼 것 같아서 else로 처리한 내용 중 IndexError가 발생할 경우의 수를 제외하도록 코드 수정.
 # 1152 `문자열의 길이는 1,000,000을 넘지 않는다`고 해서, `assert len(n) <= 1000000`를 추가했는데 AssertionError 발생함..ㅎㅎ..일단 주석 처리하고 다시 제출하니 통과함.
+# 5622 다이얼이 10개라서 당장 생각나는 방법인 반복문으로 해결했지만, 영문으로 인지하는데, 1과 0은 반영을 하지 못한다는 점도 그렇고 약간 찝찝함.
 '''
