@@ -24,6 +24,17 @@ while True:
 # 1193
 
 # 2869
+A, B, V = list(map(int, input().split()))
+day, temp = 0, 0
+
+while temp < V:
+    day += 1
+    temp += A
+    if temp >= V:
+        print(day)
+        break
+    temp -= B
+
 
 # 10250
 for _ in range(int(input())):
@@ -62,6 +73,8 @@ print(sum(sum_list))
 """
 # 2292
     # 처음에 if, else의 순서를 다르게 이해하고 작성해서, 시간초과에 빠짐. 예상 못한 규칙이라면 반영이 되지 않도록 해야 함.
+# 2869
+    # 샘플로 확인한 결과, 로직은 맞는데 시간 초과 발생
 # 10250
     # 연산의 순서가 분명하다면, 굳이 괄호로 묶을 필요는 없음.
 """
