@@ -2,7 +2,7 @@
 # math1
 import sys
 import math
-from functools import reduce
+
 
 # 1712
 A, B, C = map(int, input().split())
@@ -27,17 +27,16 @@ while True:
 
 # 1193
 N = int(sys.stdin.readline())
+end = 0
+for _idx, _v in enumerate(range(1, N + 1)):
+    end += _v
+    if end >= N:
+        line = _idx + 1
+        diff = end - N
+        break
 
-end = reduce(lambda x, y: x + y if x < N else x, range(1, N+1))
-line = [idx for idx in range(1, N+2) if sum(range(idx))==end][0]
-diff = end - N
-
-if line % 2 == 0:
-    top = line - diff
-    bottom = diff + 1
-else:
-    top = diff + 1
-    bottom = line - diff
+top = line - diff if line % 2 == 0 else diff + 1
+bottom = diff + 1 if line % 2 == 0 else line - diff
 
 print("%d/%d"%(top, bottom))
 
@@ -60,6 +59,7 @@ for _ in range(int(input())):
 
 
 # 2775
+
 
 # 2839
 N = int(input())
@@ -88,7 +88,7 @@ print(sum(sum_list))
 # 2869
     # 수식을 어떻게 작성하냐에 따라 코드도 줄일 수 있고, 시간도 줄일 수 있다는 점은 프젝에도 적용시키고 싶을 정도!
 # 1193
-    # test case로 확인한 값 도출엔 무리가 없이 작성된 코드이나, TIMEOUT 발생. 원인은 iteration이 2번이어서 그런건가 싶기도 한데.. 일단 조금 더 고민해야 함.
+    # 시간 효율은 while로 작성하는 게 68ms로 나오고 for로 작성하는 게 80ms 정도로 나오지만, while보단 for를 사용하는 게 익숙하기도 하고 나중에 다시 봐도 이해가 빠를 듯해서 for로 통과한 코드를 남기도록 함.
 # 10250
     # 연산의 순서가 분명하다면, 굳이 괄호로 묶을 필요는 없음.
 """
