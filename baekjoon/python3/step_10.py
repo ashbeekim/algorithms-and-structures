@@ -14,6 +14,15 @@ print(max(sum_arr))
 
 
 # 2231
+N = int(input())
+
+for _ in range(N + 1):
+    res = _ + sum(map(int, str(_)))
+    if res == N:
+        print(_)
+        break
+else:
+    print(0)
 
 
 # 7568
