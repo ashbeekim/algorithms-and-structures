@@ -17,6 +17,7 @@ arr = list(map(isprime, arr))
 arr = list(filter(lambda x: x==True, arr))
 print(len(arr))
 
+
 # 2581
 a = int(input())
 b = int(input())
@@ -28,6 +29,7 @@ if arr:
     print(min(arr.keys()))
 else:
     print(-1)
+
 
 # 11653
 def factorization(x): 
@@ -41,34 +43,22 @@ def factorization(x):
             
 factorization(int(input()))
 
+
 # 1929
+## 앞서 사용한 isprime 활용
+a, b = map(int, sys.stdin.readline().split())
+
+for _ in range(a, b + 1):
+    if isprime(_):
+        print(_)
+
 
 # 4948
 
 # 9020
 
-# 1085
-
-# 3009
-
-# 4153
-while True:
-    nums = list(map(int, sys.stdin.readline().strip().split()))
-    if (nums[0] == 0)&(nums[1] == 0)&(nums[2] == 0):
-        break
-    else:
-        c = max(nums)
-        a, b = list(filter(lambda x: x != c, nums))
-        if (a ** 2) + (b ** 2) == (c ** 2):
-            print("right")
-        else:
-            print("wrong")
-
-# 3053
-
-# 1002
-
 """
 # 1978, 2581은 동일하게 소수를 찾는 함수를 사용하기에 코드 중복 방지 차원에서 상단에 작성함.
     처음에 분명 소수를 구하는 값이라고 생각하고 작성했었는데, 1에 대한 예외처리를 하지 않아서 틀렸었음.
+# 1929, 런타임에러를 자주 겪었는데, 몇 번 코드 수정하다가 sys를 사용하니까 풀렸음..
 """
