@@ -26,6 +26,14 @@ else:
 
 
 # 7568
+N = int(sys.stdin.readline())
+arr = [tuple(map(int, sys.stdin.readline().split())) for _ in range(N)]
+for i in arr:
+    res = 1
+    for j in arr:
+        if (i[0] < j[0]) & (i[1] < j[1]):
+            res += 1 
+    print(res, end=' ')
 
 
 # 1018
