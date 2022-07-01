@@ -1,5 +1,6 @@
 import sys
 import math
+import itertools
 
 
 # 1978
@@ -66,10 +67,25 @@ while True:
 
 
 # 9020
+prime_lst = [_ for _ in range(4, 10000 + 1) if isprime(_)]
+prime_lst = list(itertools.combinations(prime_lst, 2))
+
+T = int(sys.stdin.readline())
+for _ in range(T):
+    n = int(sys.stdin.readline())
+    temp_lst = list(filter(lambda x: sum(x)==n, prime_lst))
+    if len(temp_lst)==1:
+        print(' '.join(list(map(str, temp_lst[0]))))
+    else:
+        diff_idx = dict(list(map(lambda x: (x[0], abs(x[1][0]-x[1][1])), enumerate(temp_lst))))
+        diff_idx = sorted(diff_idx.items(), key=lambda x: x[1])
+        print(' '.join(list(map(str, temp_lst[list(diff_idx)[0][0]]))))
+
 
 """
 # 1978, 2581은 동일하게 소수를 찾는 함수를 사용하기에 코드 중복 방지 차원에서 상단에 작성함.
     처음에 분명 소수를 구하는 값이라고 생각하고 작성했었는데, 1에 대한 예외처리를 하지 않아서 틀렸었음.
 # 1929, 런타임에러를 자주 겪었는데, 몇 번 코드 수정하다가 sys를 사용하니까 풀렸음..
 # 4948, 기존의 isprime 사용. 시간 초과 경우 방지를 위해 제한에 맞게 prime_lst 생성. lambda 식 조건 잘못 작성해서 몇 번의 에러를 겪었음.
+# 9020, 시간초과...휴...
 """
