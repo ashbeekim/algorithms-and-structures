@@ -36,12 +36,29 @@ else:
 
 
 # 1427
+n = list(sys.stdin.readline().strip())
+n.sort(reverse=True)
+print(''.join(n))
 
 
 # 11650
+n = int(sys.stdin.readline())
+arr = []
+for _ in range(n):
+    arr.append(tuple(map(int, sys.stdin.readline().split())))
+arr = sorted(arr, key=lambda x: (x[0], x[1]))
+for _ in arr:
+    print(_[0], _[1])
 
 
 # 11651
+n = int(sys.stdin.readline())
+arr = []
+for _ in range(n):
+    arr.append(tuple(map(int, sys.stdin.readline().split())))
+arr = sorted(arr, key=lambda x: (x[1], x[0]))
+for _ in arr:
+    print(_[0], _[1])
 
 
 # 1181
@@ -52,6 +69,9 @@ print('\n'.join(arr))
 
 
 # 10814
+
+
+# 18870
 
 
 """
