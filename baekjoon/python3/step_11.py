@@ -69,6 +69,14 @@ print('\n'.join(arr))
 
 
 # 10814
+n = int(sys.stdin.readline())
+arr = []
+for _ in range(n):
+    num, word = sys.stdin.readline().split()
+    arr.append((int(num), word.strip(), _))
+arr = sorted(arr, key=lambda x: (x[0], x[2]))
+for _ in arr:
+    print(_[0], _[1])
 
 
 # 18870
