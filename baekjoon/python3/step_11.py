@@ -2,6 +2,7 @@
 # sort
 import sys
 from collections import Counter
+from operator import itemgetter
 
 
 # 2750
@@ -69,12 +70,17 @@ print('\n'.join(arr))
 
 
 # 10814
+def multisort_by_idx(xs, specs):
+    for key, reverse in reversed(specs):
+        xs.sort(key=itemgetter(key), reverse=reverse)
+    return xs
+
 n = int(sys.stdin.readline())
 arr = []
 for _ in range(n):
     num, word = sys.stdin.readline().split()
     arr.append((int(num), word.strip(), _))
-arr = sorted(arr, key=lambda x: (x[0], x[2]))
+arr = multisort_by_idx(arr, ((0, False), (2, False)))
 for _ in arr:
     print(_[0], _[1])
 
@@ -84,4 +90,6 @@ for _ in arr:
 
 """
 # 2108, 최빈값 중복 시 처리 규칙에서 약간 고민했던 문제.
+# 10814, 메모리(55468 KB -> 48536 KB), 시간(336 ms -> 324 ms)
+    파이썬 공식 문서 중 정렬 참고하니까 메모리 및 시간 효율이 좋아짐.
 """
