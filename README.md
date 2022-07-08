@@ -1,6 +1,5 @@
 # Algorithms & Structures
 
-처음 학원을 다닐 때와 지금을 비교하면, 코드를 짜는 방식이나 고려하는 지점이 달라졌다.(대충 생각만 많아져서 코드치는 것이 힘들어졌다는 말.)
 코드를 짤 때에 고려해야 할 것들 중 일부만 나열하면, 순서, 구조, 논거 등이 있다.
 
 영어로는 Algorithm, Structure, Logic 으로 불리는 단어가 프로그래밍에서 왜 중요할까?
@@ -52,12 +51,13 @@
 | 2 | [조건문](https://www.acmicpc.net/step/4) | <ul><li style="list-style-type:none;"> - [x] [Python3](./baekjoon/python3/step_2.py)</li></ul> | - |
 | 3 | [반복문](https://www.acmicpc.net/step/3) | <ul><li style="list-style-type:none;"> - [x] [Python3](./baekjoon/python3/step_3.py)</li></ul> | - |
 | 4 | [1차원 배열](https://www.acmicpc.net/step/6) | <ul><li style="list-style-type:none;"> - [x] [Python3](./baekjoon/python3/step_4.py)</li></ul> | - |
-| 5 | [함수](https://www.acmicpc.net/step/5) | <ul><li style="list-style-type:none;"> - [ ] [Python3](./baekjoon/python3/step_5.py)</li></ul> | - |
-| 6 | [문자열](https://www.acmicpc.net/step/7) | <ul><li style="list-style-type:none;"> - [ ] [Python3](./baekjoon/python3/step_6.py)</li></ul> | - |
-| 7 | [기본 수학 1](https://www.acmicpc.net/step/8) | <ul><li style="list-style-type:none;"> - [ ] [Python3](./baekjoon/python3/step_7.py)</li></ul> | - |
-| 8 | [기본 수학 2](https://www.acmicpc.net/step/10) | <ul><li style="list-style-type:none;"> - [ ] Python3</li></ul> | - |
-| 9 | [재귀](https://www.acmicpc.net/step/19) | <ul><li style="list-style-type:none;"> - [ ] Python3</li></ul> | - |
-| 10 | [브루트 포스](https://www.acmicpc.net/step/22) | <ul><li style="list-style-type:none;"> - [ ] Python3</li></ul> | - |
+| 5 | [함수](https://www.acmicpc.net/step/5) | <ul><li style="list-style-type:none;"> - [x] [Python3](./baekjoon/python3/step_5.py)</li></ul> | - |
+| 6 | [문자열](https://www.acmicpc.net/step/7) | <ul><li style="list-style-type:none;"> - [x] [Python3](./baekjoon/python3/step_6.py)</li></ul> | - |
+| 7 | [기본 수학 1](https://www.acmicpc.net/step/8) | <ul><li style="list-style-type:none;"> - [x] [Python3](./baekjoon/python3/step_7.py)</li></ul> | - |
+| 8 | [기본 수학 2](https://www.acmicpc.net/step/10) | <ul><li style="list-style-type:none;"> - [ ] [Python3](./baekjoon/python3/step_8.py)</li></ul> | - |
+| 9 | [재귀](https://www.acmicpc.net/step/19) | <ul><li style="list-style-type:none;"> - [ ] [Python3](./baekjoon/python3/step_9.py)</li></ul> | - |
+| 10 | [브루트 포스](https://www.acmicpc.net/step/22) | <ul><li style="list-style-type:none;"> - [ ] [Python3](./baekjoon/python3/step_10.py)</li></ul> | - |
+| 11 | [정렬](https://www.acmicpc.net/step/9) | <ul><li style="list-style-type:none;"> - [ ] [Python3](./baekjoon/python3/step_11.py)</li></ul> | - |
 | ... | ... | ... | ... |
 | 49 | [매우 어려운 자료구조와 알고리즘(수정 예정)](https://www.acmicpc.net/step/46) | - | - |
 
