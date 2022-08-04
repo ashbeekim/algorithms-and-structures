@@ -13,4 +13,12 @@ class Solution:
                 if st == ed[::-1]:
                     return True
         return False
-    
+
+
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        max_num = max(nums)
+        for _ in range(max_num + 1):
+            if _ not in nums:
+                return _
+        return max_num + 1
