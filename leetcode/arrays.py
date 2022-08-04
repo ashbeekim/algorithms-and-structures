@@ -1,5 +1,7 @@
 import re
+import numpy as np
 from typing import List
+
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
@@ -77,3 +79,34 @@ class Solution:
             min_price = min(min_price, price)
             profit = max(profit, price - min_price)
         return profit
+
+
+class Solution:
+    def isValidSudoku(self, board: List[List[str]]) -> bool:
+        if len(board)!=9:
+            return False
+        board_r = np.array(board)
+        board_c = board_r.T
+        board_b = board_r.reshape(3, 3, 3, 3).swapaxes(1, 2).reshape(9, -1) # 3*3 박스를 2D 배열화
+        for _rows, _cols, _boxs in zip(board_r, board_c, board_b):
+            if (len(_rows)!=9)|(len(_cols)!=9)|(len(_boxs)!=9):
+                return False
+
+            # rows
+            unique, count = np.unique(_rows, return_counts=True)
+            for _unq, _cnt in zip(unique, count):
+                if (_unq!=".")&(_cnt > 1):
+                    return False
+            
+            # colums
+            unique, count = np.unique(_cols, return_counts=True)
+            for _unq, _cnt in zip(unique, count):
+                if (_unq!=".")&(_cnt > 1):
+                    return False
+            
+            # boxes
+            unique, count = np.unique(_boxs, return_counts=True)
+            for _unq, _cnt in zip(unique, count):
+                if (_unq!=".")&(_cnt > 1):
+                    return False
+        return True
