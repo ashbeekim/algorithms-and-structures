@@ -22,3 +22,10 @@ class Solution:
             if _ not in nums:
                 return _
         return max_num + 1
+
+
+class Solution:
+    def reverseBits(self, n: int) -> int:
+        n = bin(n)[2:][::-1]    # bin(n) := '0b' + ~
+        n = n + "0"*(32 - len(n))
+        return int(n, 2)
