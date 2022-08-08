@@ -29,3 +29,18 @@ class Solution:
         n = bin(n)[2:][::-1]    # bin(n) := '0b' + ~
         n = n + "0"*(32 - len(n))
         return int(n, 2)
+
+
+class Solution:
+    def moveZeroes(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        length = len(nums)
+        while True:
+            try:
+                nums.remove(0)
+            except:
+                break
+        for _ in range(length - len(nums)):
+            nums.append(0)
