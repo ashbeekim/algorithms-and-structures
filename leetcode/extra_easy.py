@@ -39,10 +39,14 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        cnt = nums.count(0)
-        for _ in range(cnt):
+        _cnt, cnt = 0, nums.count(0)
+        while True:
+            if _cnt==cnt:
+                break
             nums.remove(0)
-            nums.append(0)
+            _cnt += 1
+
+        nums.extend(cnt * [0])
 
 
 class Solution:
@@ -53,3 +57,4 @@ class Solution:
                 j += 1
                 nums[j] = nums[i]
         return j + 1
+
