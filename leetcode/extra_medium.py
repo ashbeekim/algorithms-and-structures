@@ -19,3 +19,14 @@ class Solution:
         
         left.next = left.next.next
         return head
+
+
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        cnt, diff = 0, [0] * len(prices)
+        for i in range(1, len(prices)):
+            diff[i - cnt] = prices[i] - prices[i - 1]
+            if diff[i - cnt] <= 0:
+                diff.pop(i - cnt)
+                cnt += 1
+        return sum(diff)
