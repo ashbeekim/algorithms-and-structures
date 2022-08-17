@@ -58,3 +58,16 @@ class Solution:
                 nums[j] = nums[i]
         return j + 1
 
+
+class Solution(object):
+    def longestCommonPrefix(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: str
+        """
+        prefix = min(strs, key=len)
+        for word in strs:
+            while prefix != word[:len(prefix)]:
+                prefix = prefix[:-1]
+        return prefix
+
