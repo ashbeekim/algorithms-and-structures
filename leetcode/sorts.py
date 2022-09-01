@@ -1,3 +1,4 @@
+from heapq import merge
 from typing import Optional, List
 
 
@@ -6,6 +7,7 @@ class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
+
 
 class Solution:
     def sortList(self, head: Optional[ListNode]) -> Optional[ListNode]:
@@ -24,3 +26,14 @@ class Solution:
             pts.val = lst[_idx]
             pts = pts.next
         return head
+
+
+class Solution:
+    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+        section_lst = []
+        for _lst in sorted(intervals, key=lambda x: x[0]):
+            if section_lst and _lst[0] <= section_lst[-1][1]:
+                section_lst[-1][1] = max(section_lst[-1][1], _lst[1])
+            else:
+                section_lst.append(_lst)
+        return section_lst
