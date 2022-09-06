@@ -77,3 +77,25 @@ class Solution:
         if len(nums)!=len(set(nums)):
             return True
         return False
+
+
+class Solution:
+    def generate(self, numRows: int) -> List[List[int]]:
+        rows = [[1]]
+
+        if numRows==0:
+            return []
+        elif numRows==1:
+            return rows
+        
+        for _num in range(1, numRows):
+            if _num==1:
+                rows.append([1, 1])
+            else:
+                upperRow = rows[-1]
+                currRow = [upperRow[_idx-1] + upperRow[_idx] for _idx in range(1, len(upperRow))]
+                currRow.insert(0, 1)
+                currRow.append(1)
+                rows.append(currRow)
+        return rows
+        
