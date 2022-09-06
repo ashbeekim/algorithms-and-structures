@@ -105,9 +105,15 @@ class Solution:
 class Solution:
     def firstBadVersion(self, n: int) -> int:
         bad_version = []
-        
-        for _idx in range(1, n+1):
+        n = n+1
+        half, rest = n//2, n%2
+        for _idx in range(1, half+1):
             if isBadVersion(_idx):
                 bad_version.append(_idx)
+            if isBadVersion(n-_idx):
+                bad_version.append(n-_idx)
+            if (_idx==half)&(rest):
+                if isBadVersion(_idx+1):
+                    bad_version.append(_idx+1)
             
         return min(bad_version)
