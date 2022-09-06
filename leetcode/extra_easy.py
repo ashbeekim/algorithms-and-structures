@@ -98,4 +98,16 @@ class Solution:
                 currRow.append(1)
                 rows.append(currRow)
         return rows
+
+
+# The isBadVersion API is already defined for you.
+# def isBadVersion(version: int) -> bool:
+class Solution:
+    def firstBadVersion(self, n: int) -> int:
+        bad_version = []
         
+        for _idx in range(1, n+1):
+            if isBadVersion(_idx):
+                bad_version.append(_idx)
+            
+        return min(bad_version)
