@@ -104,16 +104,11 @@ class Solution:
 # def isBadVersion(version: int) -> bool:
 class Solution:
     def firstBadVersion(self, n: int) -> int:
-        bad_version = []
-        n = n+1
-        half, rest = n//2, n%2
-        for _idx in range(1, half+1):
-            if isBadVersion(_idx):
-                bad_version.append(_idx)
-            if isBadVersion(n-_idx):
-                bad_version.append(n-_idx)
-            if (_idx==half)&(rest):
-                if isBadVersion(_idx+1):
-                    bad_version.append(_idx+1)
-            
-        return min(bad_version)
+        left, right = 1, n
+        while (left<=right):
+            mid = (left+right)//2
+            if isBadVersion(mid):
+                right = mid-1
+            else:
+                left = mid+1
+        return left
