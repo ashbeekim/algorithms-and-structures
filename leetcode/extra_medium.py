@@ -1,3 +1,6 @@
+from typing import Optional, List
+
+
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
@@ -30,3 +33,10 @@ class Solution:
                 diff.pop(i - cnt)
                 cnt += 1
         return sum(diff)
+
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        lst = []
+        for i in range(1, len(nums)+1):
+            lst.extend([sum(nums[j:j+i]) for j in range(len(nums))])
+        return max(lst)
