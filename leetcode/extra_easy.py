@@ -112,3 +112,13 @@ class Solution:
             else:
                 left = mid+1
         return left
+
+
+class Solution:
+    def hammingDistance(self, x: int, y: int) -> int:
+        x = format(x, '031b')
+        y = format(y, '031b')
+        res = ''
+        for i, j in zip(x, y):
+            res += '0' if x==y else '1'
+        return res.count('1')
