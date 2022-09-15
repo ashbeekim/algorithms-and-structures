@@ -36,7 +36,6 @@ class Solution:
 
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        lst = []
-        for i in range(1, len(nums)+1):
-            lst.extend([sum(nums[j:j+i]) for j in range(len(nums))])
-        return max(lst)
+        for i in range(1, len(nums)):
+            nums[i] = max(nums[i], nums[i] + nums[i - 1])
+        return max(nums)
