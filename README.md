@@ -55,11 +55,14 @@
 | 6 | [문자열](https://www.acmicpc.net/step/7) | <ul><li style="list-style-type:none;"> - [x] [Python3](./baekjoon/python3/step_6.py)</li></ul> | - |
 | 7 | [기본 수학 1](https://www.acmicpc.net/step/8) | <ul><li style="list-style-type:none;"> - [x] [Python3](./baekjoon/python3/step_7.py)</li></ul> | - |
 | 8 | [기본 수학 2](https://www.acmicpc.net/step/10) | <ul><li style="list-style-type:none;"> - [ ] [Python3](./baekjoon/python3/step_8.py)</li></ul> | - |
-| 9 | [재귀](https://www.acmicpc.net/step/19) | <ul><li style="list-style-type:none;"> - [ ] [Python3](./baekjoon/python3/step_9.py)</li></ul> | - |
-| 10 | [브루트 포스](https://www.acmicpc.net/step/22) | <ul><li style="list-style-type:none;"> - [ ] [Python3](./baekjoon/python3/step_10.py)</li></ul> | - |
-| 11 | [정렬](https://www.acmicpc.net/step/9) | <ul><li style="list-style-type:none;"> - [ ] [Python3](./baekjoon/python3/step_11.py)</li></ul> | - |
+| 9 | [정렬](https://www.acmicpc.net/step/9) | <ul><li style="list-style-type:none;"> - [ ] [Python3](./baekjoon/python3/step_9.py)</li></ul> | - |
+| 10 | [재귀](https://www.acmicpc.net/step/19) | <ul><li style="list-style-type:none;"> - [ ] [Python3](./baekjoon/python3/step_10.py)</li></ul> | - |
+| 11 | [브루트 포스](https://www.acmicpc.net/step/22) | <ul><li style="list-style-type:none;"> - [ ] [Python3](./baekjoon/python3/step_11.py)</li></ul> | - |
+| 12 | [집합과 맵](https://www.acmicpc.net/step/49) | <ul><li style="list-style-type:none;"> - [ ] [Python3](./baekjoon/python3/step_12.py)</li></ul> | - |
+| 13 | [기하 1](https://www.acmicpc.net/step/50) | <ul><li style="list-style-type:none;"> - [ ] [Python3](./baekjoon/python3/step_13.py)</li></ul> | - |
+| 14 | [정수론 및 조합론](https://www.acmicpc.net/step/18) | <ul><li style="list-style-type:none;"> - [ ] [Python3](./baekjoon/python3/step_14.py)</li></ul> | - |
 | ... | ... | ... | ... |
-| 49 | [매우 어려운 자료구조와 알고리즘(수정 예정)](https://www.acmicpc.net/step/46) | - | - |
+| 53 | [매우 어려운 자료구조와 알고리즘(수정 예정)](https://www.acmicpc.net/step/46) | - | - |
 
 
 ---

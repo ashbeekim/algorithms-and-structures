@@ -1,62 +1,98 @@
 # -*- coding: utf-8 -*-
-# recursion
-# 10872
-N = int(input())
+# sort
+import sys
+from collections import Counter
+from operator import itemgetter
 
-def factorial(n):
-    if n == 0:
-        return 1
+
+# 2750
+
+
+# 2751
+
+
+# 10989
+
+
+# 25305
+
+
+# 2108
+N = int(sys.stdin.readline())
+arr = [int(sys.stdin.readline()) for _ in range(N)]
+arr.sort()
+if len(arr)==1:
+    print(arr[0])
+    print(arr[0])
+    print(arr[0])
+    print(0)
+else:
+    print(int(round(sum(arr)/N)))
+    print(arr[int(N/2)])
+    c_arr = sorted(Counter(arr).items(), key=lambda x: (-x[1], x[0]))
+    cnt = c_arr[0][1]
+    c_arr = list(filter(lambda x: x[1]==cnt, c_arr))
+    if len(c_arr)==1:
+        print(c_arr[0][0])
     else:
-        return n * factorial(n - 1)
-
-print(factorial(N))
-
-
-# 10870
-N = int(input())
-
-def fibo(n):
-    if (n == 0):
-        return 0
-
-    elif (n == 1):
-        return 1
-
-    return fibo(n - 2) + fibo(n - 1)
-
-print(fibo(N))
+        print(c_arr[1][0])
+    print(arr[-1] - arr[0])
 
 
-# 17478
-def end_sentence(n):
-    if n < 0:
-        return
-    print("____" * n + '라고 답변하였지.')
-    return end_sentence(n-1)
-
-def recursion(n, m):
-    print("____" * m + '"재귀함수가 뭔가요?"')
-    if n == 0:
-        print("____" * m + '"재귀함수는 자기 자신을 호출하는 함수라네"')
-        return end_sentence(m)
-    print("____" * m + '"잘 들어보게. 옛날옛날 한 산 꼭대기에 이세상 모든 지식을 통달한 선인이 있었어.')
-    print("____" * m + '마을 사람들은 모두 그 선인에게 수많은 질문을 했고, 모두 지혜롭게 대답해 주었지.')
-    print("____" * m + '그의 답은 대부분 옳았다고 하네. 그런데 어느 날, 그 선인에게 한 선비가 찾아와서 물었어."')
-    return recursion(n - 1, m + 1)
-
-n = int(input())
-print("어느 한 컴퓨터공학과 학생이 유명한 교수님을 찾아가 물었다.")
-recursion(n, 0)
+# 1427
+n = list(sys.stdin.readline().strip())
+n.sort(reverse=True)
+print(''.join(n))
 
 
-# 2447
+# 11650
+n = int(sys.stdin.readline())
+arr = []
+for _ in range(n):
+    arr.append(tuple(map(int, sys.stdin.readline().split())))
+arr = sorted(arr, key=lambda x: (x[0], x[1]))
+for _ in arr:
+    print(_[0], _[1])
 
 
-# 11729
+# 11651
+n = int(sys.stdin.readline())
+arr = []
+for _ in range(n):
+    arr.append(tuple(map(int, sys.stdin.readline().split())))
+arr = sorted(arr, key=lambda x: (x[1], x[0]))
+for _ in arr:
+    print(_[0], _[1])
+
+
+# 1181
+N = int(sys.stdin.readline())
+arr = list(set([sys.stdin.readline().strip() for _ in range(N)]))
+arr.sort(key = lambda x: (len(x), x))
+print('\n'.join(arr))
+
+
+# 10814
+def multisort_by_idx(xs, specs):
+    for key, reverse in reversed(specs):
+        xs.sort(key=itemgetter(key), reverse=reverse)
+    return xs
+
+n = int(sys.stdin.readline())
+arr = []
+for _ in range(n):
+    num, word = sys.stdin.readline().split()
+    arr.append((int(num), word.strip(), _))
+arr = multisort_by_idx(arr, ((0, False), (2, False)))
+for _ in arr:
+    print(_[0], _[1])
+
+
+# 18870
 
 
 """
-# 10872, 재귀 함수는 프로그래밍에 있어 중요한 기법 중 하나, 자기 자신을 다시 호출하는 함수라고 하는데 팩토리얼과 같은 기본 연산에서의 재귀적 함수 사용은 알겠는데, 금일 비즈니스 로직에서의 적용 시도는 실패함.
-# 10870, 문제를 다르게 이해해서, 계속 오류가 났었던 문제. n번째 피보나치 수를 구하는 것인데, sum of fibos로 착각함.
-# 17478, 재귀함수를 참조한 재귀함수, 풀라고 해서 풀었으나 현재 프로젝트에서 이걸 사용해도 될 법한 로직이 생각나지 않음.
+# 2108, 최빈값 중복 시 처리 규칙에서 약간 고민했던 문제.
+# 10814, 메모리(55468 KB -> 48536 KB), 시간(336 ms -> 324 ms)
+    파이썬 공식 문서 중 정렬 참고하니까 메모리 및 시간 효율이 좋아짐.
 """

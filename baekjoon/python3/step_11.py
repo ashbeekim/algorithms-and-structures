@@ -1,95 +1,43 @@
 # -*- coding: utf-8 -*-
-# sort
+# brute-force
 import sys
-from collections import Counter
-from operator import itemgetter
+from itertools import combinations
+
+# 2798
+N, M = map(int, sys.stdin.readline().split())
+arr = list(map(int, sys.stdin.readline().split()))
+sum_arr = []
+for _ in combinations(arr, 3):
+    sum_arr.append(sum(_))
+sum_arr = list(filter(lambda x: x <= M, sum_arr))
+print(max(sum_arr))
 
 
-# 2750
+# 2231
+N = int(input())
 
-
-# 2751
-
-
-# 10989
-
-
-# 2108
-N = int(sys.stdin.readline())
-arr = [int(sys.stdin.readline()) for _ in range(N)]
-arr.sort()
-if len(arr)==1:
-    print(arr[0])
-    print(arr[0])
-    print(arr[0])
-    print(0)
+for _ in range(N + 1):
+    res = _ + sum(map(int, str(_)))
+    if res == N:
+        print(_)
+        break
 else:
-    print(int(round(sum(arr)/N)))
-    print(arr[int(N/2)])
-    c_arr = sorted(Counter(arr).items(), key=lambda x: (-x[1], x[0]))
-    cnt = c_arr[0][1]
-    c_arr = list(filter(lambda x: x[1]==cnt, c_arr))
-    if len(c_arr)==1:
-        print(c_arr[0][0])
-    else:
-        print(c_arr[1][0])
-    print(arr[-1] - arr[0])
+    print(0)
 
 
-# 1427
-n = list(sys.stdin.readline().strip())
-n.sort(reverse=True)
-print(''.join(n))
-
-
-# 11650
-n = int(sys.stdin.readline())
-arr = []
-for _ in range(n):
-    arr.append(tuple(map(int, sys.stdin.readline().split())))
-arr = sorted(arr, key=lambda x: (x[0], x[1]))
-for _ in arr:
-    print(_[0], _[1])
-
-
-# 11651
-n = int(sys.stdin.readline())
-arr = []
-for _ in range(n):
-    arr.append(tuple(map(int, sys.stdin.readline().split())))
-arr = sorted(arr, key=lambda x: (x[1], x[0]))
-for _ in arr:
-    print(_[0], _[1])
-
-
-# 1181
+# 7568
 N = int(sys.stdin.readline())
-arr = list(set([sys.stdin.readline().strip() for _ in range(N)]))
-arr.sort(key = lambda x: (len(x), x))
-print('\n'.join(arr))
+arr = [tuple(map(int, sys.stdin.readline().split())) for _ in range(N)]
+for i in arr:
+    res = 1
+    for j in arr:
+        if (i[0] < j[0]) & (i[1] < j[1]):
+            res += 1 
+    print(res, end=' ')
 
 
-# 10814
-def multisort_by_idx(xs, specs):
-    for key, reverse in reversed(specs):
-        xs.sort(key=itemgetter(key), reverse=reverse)
-    return xs
-
-n = int(sys.stdin.readline())
-arr = []
-for _ in range(n):
-    num, word = sys.stdin.readline().split()
-    arr.append((int(num), word.strip(), _))
-arr = multisort_by_idx(arr, ((0, False), (2, False)))
-for _ in arr:
-    print(_[0], _[1])
+# 1018
 
 
-# 18870
+# 1436
 
-
-"""
-# 2108, 최빈값 중복 시 처리 규칙에서 약간 고민했던 문제.
-# 10814, 메모리(55468 KB -> 48536 KB), 시간(336 ms -> 324 ms)
-    파이썬 공식 문서 중 정렬 참고하니까 메모리 및 시간 효율이 좋아짐.
-"""

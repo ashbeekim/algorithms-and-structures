@@ -1,43 +1,45 @@
 # -*- coding: utf-8 -*-
-# brute-force
-import sys
-from itertools import combinations
-
-# 2798
-N, M = map(int, sys.stdin.readline().split())
-arr = list(map(int, sys.stdin.readline().split()))
-sum_arr = []
-for _ in combinations(arr, 3):
-    sum_arr.append(sum(_))
-sum_arr = list(filter(lambda x: x <= M, sum_arr))
-print(max(sum_arr))
-
-
-# 2231
+# recursion
+# 10872
 N = int(input())
 
-for _ in range(N + 1):
-    res = _ + sum(map(int, str(_)))
-    if res == N:
-        print(_)
-        break
-else:
-    print(0)
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+print(factorial(N))
 
 
-# 7568
-N = int(sys.stdin.readline())
-arr = [tuple(map(int, sys.stdin.readline().split())) for _ in range(N)]
-for i in arr:
-    res = 1
-    for j in arr:
-        if (i[0] < j[0]) & (i[1] < j[1]):
-            res += 1 
-    print(res, end=' ')
+# 10870
+N = int(input())
+
+def fibo(n):
+    if (n == 0):
+        return 0
+
+    elif (n == 1):
+        return 1
+
+    return fibo(n - 2) + fibo(n - 1)
+
+print(fibo(N))
 
 
-# 1018
+# 25501
 
 
-# 1436
+# 24060
 
+
+# 2447
+
+
+# 11729
+
+
+"""
+# 10872, 재귀 함수는 프로그래밍에 있어 중요한 기법 중 하나, 자기 자신을 다시 호출하는 함수라고 하는데 팩토리얼과 같은 기본 연산에서의 재귀적 함수 사용은 알겠는데, 금일 비즈니스 로직에서의 적용 시도는 실패함.
+# 10870, 문제를 다르게 이해해서, 계속 오류가 났었던 문제. n번째 피보나치 수를 구하는 것인데, sum of fibos로 착각함.
+"""
