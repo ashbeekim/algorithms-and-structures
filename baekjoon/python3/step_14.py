@@ -36,10 +36,13 @@ for _ in range(n):
 # 11050
 n, k = map(int, sys.stdin.readline().split())
 
-print(len(list(combinations(range(n), k))))
+print(math.comb(n, k))
 
 
 # 11051
+n, k = map(int, sys.stdin.readline().split())
+
+print(math.comb(n, k)%10007)
 
 
 # 1010
@@ -49,10 +52,20 @@ print(len(list(combinations(range(n), k))))
 
 
 # 1676
+n = int(input())
+cnt = 0
+for x in str(math.factorial(n))[::-1]:
+    if x != '0':
+        break
+    cnt += 1
+print(cnt)
 
 
 # 2004
 
 
 """
+# 11050, 
+    itertools.combinations로 풀면, 메모리는 줄어드는데 시간이 조금 더 걸리고,
+    math.comb로 풀면, 메모리는 조금 늘어나는 대신, 연산 시간이 줄어듦.
 """
