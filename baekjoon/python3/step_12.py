@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 # set & map
+from curses.ascii import isdigit
 import sys
 
 
@@ -23,9 +24,36 @@ print(res)
 
 
 # 14425
+n, m = map(int, input().split())
+n_set = set()
+cnt = 0
+
+for _ in range(n):
+    n_set.add(sys.stdin.readline().strip())
+
+for _ in range(m):
+    if sys.stdin.readline().strip() in n_set:
+        cnt += 1
+
+print(cnt)
 
 
 # 1620
+n, k = map(int, input().split())
+int_dict = {}
+str_dict = {}
+
+for _ in range(n):
+    name = sys.stdin.readline().strip()
+    int_dict[_] = name
+    str_dict[name] = _
+
+for _ in range(k):
+    q = sys.stdin.readline().strip()
+    if q.isdigit()==True:
+        print(int_dict[int(q)-1])
+    else:
+        print(str_dict[q] + 1)
 
 
 # 10816
