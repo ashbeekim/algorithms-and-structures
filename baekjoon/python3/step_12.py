@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 # set & map
-from curses.ascii import isdigit
 import sys
+
+
+input = sys.stdin.readline
 
 
 # 10815
@@ -77,6 +79,20 @@ for _ in range(m):
 
 
 # 1764
+n, m = map(int, input().split())
+arr = []
+
+for _ in range(n + m):
+    arr.append(input().strip())
+n_set = set(arr[:n])
+m_set = set(arr[n:])
+
+intersection = list(n_set & m_set)
+intersection.sor()
+print(len(intersection))
+
+for _ in intersection:
+    print(_)
 
 
 # 1269
@@ -88,6 +104,14 @@ print((len(comp) - len(A)) + (len(comp) - len(B)))
 
 
 # 11478
+word = list(map(str, sys.stdin.readline().strip()))
+w_set = set()
+w_set.update(word)
+
+for _ in range(2, len(word) + 1):
+    for num in range(len(word) - _ + 1):
+        w_set.add(''.join(word[num:num+_]))
+print(len(w_set))
 
 
 """
