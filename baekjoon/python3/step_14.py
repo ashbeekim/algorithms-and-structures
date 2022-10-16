@@ -5,7 +5,20 @@ import math
 from itertools import combinations
 
 
+input = sys.stdin.readline
+
+
 # 5086
+while True:
+    a, b = map(int, input().split())
+    if (a==0)&(b==0):
+        break
+    if b%a==0:
+        print('factor')
+    elif a%b==0:
+        print('multiple')
+    else:
+        print('neither')
 
 
 # 1037
@@ -23,7 +36,7 @@ print(math.lcm(a, b))
 # 1934
 n = int(input())
 for _ in range(n):
-    a, b = map(int, sys.stdin.readline().split())
+    a, b = map(int, input().split())
     print(math.lcm(a, b))
 
 
@@ -34,13 +47,13 @@ for _ in range(n):
 
 
 # 11050
-n, k = map(int, sys.stdin.readline().split())
+n, k = map(int, input().split())
 
 print(math.comb(n, k))
 
 
 # 11051
-n, k = map(int, sys.stdin.readline().split())
+n, k = map(int, input().split())
 
 print(math.comb(n, k)%10007)
 
