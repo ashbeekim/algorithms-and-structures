@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 # cumulative sum
+import itertools
 import sys
 
 
@@ -22,6 +23,18 @@ for i in range(m):
 
 
 # 2559
+n, k = map(int, input().split())
+lst = list(map(int, input().split()))
+lst_sum = list(itertools.accumulate(lst))
+lst_lst = []
+
+for _ in range(0, n-(k-1)):
+    a = lst_sum[_-1]
+    b = lst_sum[_+k-1]
+    if _-1 < 0:
+        a = 0
+    lst_lst.append(b-a)
+print(max(lst_lst))
 
 
 # 16139
