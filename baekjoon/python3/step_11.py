@@ -40,4 +40,19 @@ for i in arr:
 
 
 # 1436
+n = int(input())
+cnt = 0
+num = 666
 
+while True:
+    if "666" in str(num):
+        cnt += 1
+    if cnt == n:
+        print(num)
+        break
+    num += 1
+
+
+"""
+# 1436, 브루트 포스 문제를 그렇지 않게 풀어보려고 시도해보다가 현재 내 사고로는 삽질만 하게 되어서, 가장 쉬운 방법으로 풀이함.
+"""
