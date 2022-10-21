@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+# geometry 1
 import sys
 import math
 
@@ -29,6 +31,17 @@ while True:
 
 
 # 3053
+def ucl_circle(r):
+    return math.pi*(r**2)
+
+
+def txc_circle(r):
+    return 2*(r**2)
+
+
+r = int(input())
+print(ucl_circle(r))
+print(txc_circle(r))
 
 
 # 1002
