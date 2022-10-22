@@ -44,6 +44,21 @@ for _ in range(n):
 
 
 # 3036
+def calc_gcd(lg_num, sm_num):
+    while sm_num!=0:
+        mod = lg_num%sm_num
+        lg_num = sm_num
+        sm_num = mod
+    return lg_num
+
+
+n = int(input())
+lst = list(map(int, input().split()))
+benchmark = lst.pop(0)
+
+for _ in range(n-1):
+    _gcd = calc_gcd(benchmark, lst[_])
+    print('{}/{}'.format(benchmark//_gcd, lst[_]//_gcd))
 
 
 # 11050
@@ -83,6 +98,9 @@ print(cnt)
 
 
 """
+# 3036, 기약분수: 분모와 분자가 1 외에는 공약수가 없는 분수
+    기약분수는 분모, 분자가 서로소. 즉, 최대공약수가 1이란 말과 같음.
+    따라서 두 수의 최대공약수로 나누면 기약분수가 됨.
 # 11050, 
     itertools.combinations로 풀면, 메모리는 줄어드는데 시간이 조금 더 걸리고,
     math.comb로 풀면, 메모리는 조금 늘어나는 대신, 연산 시간이 줄어듦.
