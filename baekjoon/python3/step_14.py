@@ -59,6 +59,11 @@ print(math.comb(n, k)%10007)
 
 
 # 1010
+t = int(input())
+
+for _ in range(t):
+    n, m = map(int, input().split())
+    print(math.factorial(m) // (math.factorial(n)*math.factorial(m-n)))
 
 
 # 9375
@@ -81,4 +86,5 @@ print(cnt)
 # 11050, 
     itertools.combinations로 풀면, 메모리는 줄어드는데 시간이 조금 더 걸리고,
     math.comb로 풀면, 메모리는 조금 늘어나는 대신, 연산 시간이 줄어듦.
+# 1010, mCn, m!/(n!*(m-n)!)
 """
