@@ -1,20 +1,42 @@
 # -*- coding: utf-8 -*-
 # sort
 import sys
+from statistics import mean, median
 from collections import Counter
 from operator import itemgetter
 
 
+input = sys.stdin.readline
+
 # 2750
+t = int(input())
+arr = []
+
+for _ in range(t):
+    arr.append(int(input()))
+arr.sort()
+
+for _ in range(len(arr)):
+    print(arr[_])
+
+
+# 2587
+arr = []
+
+for _ in range(5):
+    arr.append(int(input()))
+
+print(int(mean(arr)))
+print(int(median(arr)))
+
+
+# 25305
 
 
 # 2751
 
 
 # 10989
-
-
-# 25305
 
 
 # 2108
@@ -40,34 +62,34 @@ else:
 
 
 # 1427
-n = list(sys.stdin.readline().strip())
+n = list(input().strip())
 n.sort(reverse=True)
 print(''.join(n))
 
 
 # 11650
-n = int(sys.stdin.readline())
+n = int(input())
 arr = []
 for _ in range(n):
-    arr.append(tuple(map(int, sys.stdin.readline().split())))
+    arr.append(tuple(map(int, input().split())))
 arr = sorted(arr, key=lambda x: (x[0], x[1]))
 for _ in arr:
     print(_[0], _[1])
 
 
 # 11651
-n = int(sys.stdin.readline())
+n = int(input())
 arr = []
 for _ in range(n):
-    arr.append(tuple(map(int, sys.stdin.readline().split())))
+    arr.append(tuple(map(int, input().split())))
 arr = sorted(arr, key=lambda x: (x[1], x[0]))
 for _ in arr:
     print(_[0], _[1])
 
 
 # 1181
-N = int(sys.stdin.readline())
-arr = list(set([sys.stdin.readline().strip() for _ in range(N)]))
+N = int(input())
+arr = list(set([input().strip() for _ in range(N)]))
 arr.sort(key = lambda x: (len(x), x))
 print('\n'.join(arr))
 
@@ -78,10 +100,10 @@ def multisort_by_idx(xs, specs):
         xs.sort(key=itemgetter(key), reverse=reverse)
     return xs
 
-n = int(sys.stdin.readline())
+n = int(input())
 arr = []
 for _ in range(n):
-    num, word = sys.stdin.readline().split()
+    num, word = input().split()
     arr.append((int(num), word.strip(), _))
 arr = multisort_by_idx(arr, ((0, False), (2, False)))
 for _ in arr:
